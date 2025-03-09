@@ -1,82 +1,70 @@
-<!DOCTYPE html>
-<html>
-  <head>
-	<meta charset="utf-8" name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-	<title>随机点名</title>
-    <style>
-      *{
-        margin:0;
-        padding:0;
+<！doctype html>
+<超文本标记语言>
+  <头>
+	<元 字符集="utf-8" 姓名="视口" 内容="width=设备宽度，初始比例=1，最大比例=1，用户可缩放=否">
+	<标题>随机点名</标题>
+    <风格>
+*{
+        边缘:0;
+        填充:0;
        }
-      body{
-        background-color:blue;
+      身体{
+        背景色:蓝色的;
         
       }
-      .stu{
+.斯图{
         
-        float:left;
-        width:100px;
-        background-color:red;
-        text-align:center;
-        color:white;
-        padding:5px 0;
-        margin:10px;
+        漂浮:左;
+        宽度:100PX;
+        背景色:红色的;
+        文本对齐:中心;
+        颜色:白色的;
+        填充:5PX 0;
+        边缘:10PX;
       }
       
-      .ck{
-        background-color:green;
-        color:yellow;
+.CK{
+        背景色:绿色的;
+        颜色:黄色的;
        }
-       .start{
-         position:absolute;
-         top:50%;
-         left:50%;
-         transform:translate(-50%,-50%);
+.开始{
+         位置:绝对的;
+         顶端:50%;
+         左:50%;
+         改变:翻译(-50%,-50%);
         }
-    </style>
-  </head>
-  <body>	
-	<button class="start" onclick="start()">开始点名</button>
-    <script>
-       const data = [
-       "百里守约",
-       "庄周",
-       "李元芳",
-       "花木兰",
-       "诸葛亮",
-       "吕布",
-       "关羽",
-       "鲁班",
-       "张飞",
-       "刘备",
-       "李白",
-       "程咬金",
-       "后羿",
-       "扁鹊",
-       "曹操"]
+    </风格>
+  </头>
+  <身体>	
+	<按钮 班级="开始" onClick="开始()">开始点名</按钮>
+    <脚本>
+       Const 数据=[
+       "魏灼",
+       "尹圣义",
+       ]
        
-       data.forEach(v=>{
-         let stu = document.createElement("div")
-         stu.className = "stu"
-         stu.innerText = v
-         document.body.appendChild(stu)
+       数据.foreach(v=>{
+         让 斯图=文件.createElement("div")
+         斯图.className="stu"
+         斯图.内部文本=v
+         文件.身体.appendChild(斯图)
        })
      
-       function start(){
-          let stu = document.querySelectorAll(".stu")
-          let timer = setInterval(()=>{
-            stu.forEach(v=>{
-              v.classList.remove("ck")
+       功能 开始(){
+          让 斯图=文件.querySelectorAll(".stu")
+          让 计时器=setInterval(()=>{
+            斯图.foreach(v=>{
+              v.classList.移除("ck")
             })
-            stu[Math.floor(Math.random()*stu.length)].classList.add("ck")
+            斯图[数学.地板(数学.随机()*斯图.长度)].classList.添加("ck")
           
           },200)
           setTimeout(()=>{
-            clearInterval(timer)
+            clearInterval(计时器)
             
           },2000);
        }
     
-    </script>
-  </body>
-</html>
+    </脚本>
+  </身体>
+</超文本标记语言>
