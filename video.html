@@ -1,34 +1,46 @@
 <html>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
   <title>video</title>
-    <body>
-   <!-- HTML 部分 -->
-<video 
-  id="myVideo"
-  width="800"
-  poster="lj.jpg"  <!-- 视频封面图 -->
-  style="cursor: pointer;" <!-- 鼠标显示可点击状态 -->
->
-  <source src="lj.mp4" type="video/mp4">
-</video>
+  <body>
+    <!-- 视频1 -->
+    <div>
+      <video 
+        id="myVideo"
+        width="800"
+        poster="lj.jpg"   <!-- 修正注释写法 -->
+        style="cursor: pointer;">
+        <source src="lj.mp4" type="video/mp4">
+      </video>
+    </div>
 
-<!-- JavaScript 控制 -->
-<script>
-const video = document.getElementById('myVideo')
+    <!-- 视频2 -->
+    <div>
+      <video 
+        id="aVideo"
+        width="800"
+        poster="mvp.jpg"  <!-- 修正注释写法 -->
+        style="cursor: pointer;">
+        <source src="mvp.mp4" type="video/mp4">
+      </video>
+    </div>
 
-// 点击视频区域时切换播放/暂停
-video.addEventListener('click', () => {
-  if (video.paused) {
-    video.play()
-  } else {
-    video.pause()
-  }
-})
+    <script>
+      // 统一控制逻辑的函数
+      function initVideoControl(videoId) {
+        const video = document.getElementById(videoId);
+        
+        video.addEventListener('click', () => {
+          video[video.paused ? 'play' : 'pause']();
+        });
 
-// 可选：播放结束后显示封面图
-video.addEventListener('ended', () => {
-  video.load() // 重置视频
-})
-</script>
-    </body>
+        video.addEventListener('ended', () => {
+          video.load();
+        });
+      }
+
+      // 初始化两个视频
+      initVideoControl('myVideo');
+      initVideoControl('aVideo');
+    </script>
+  </body>
 </html>
