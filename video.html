@@ -1,0 +1,34 @@
+<html>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>手机编程</title>
+    <body>
+   <!-- HTML 部分 -->
+<video 
+  id="myVideo"
+  width="800"
+  poster="lj.jpg"  <!-- 视频封面图 -->
+  style="cursor: pointer;" <!-- 鼠标显示可点击状态 -->
+>
+  <source src="lj.mp4" type="video/mp4">
+</video>
+
+<!-- JavaScript 控制 -->
+<script>
+const video = document.getElementById('myVideo')
+
+// 点击视频区域时切换播放/暂停
+video.addEventListener('click', () => {
+  if (video.paused) {
+    video.play()
+  } else {
+    video.pause()
+  }
+})
+
+// 可选：播放结束后显示封面图
+video.addEventListener('ended', () => {
+  video.load() // 重置视频
+})
+</script>
+    </body>
+</html>
